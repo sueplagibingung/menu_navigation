@@ -63,6 +63,12 @@ public class MainActivity extends AppCompatActivity {
         } else if (id==R.id.favorit) {
             Toast.makeText(this, "Menu Favorit", Toast.LENGTH_SHORT).show();
             return  true;
+        }else if (id==R.id.item1) {
+            Toast.makeText(this, "Item 1", Toast.LENGTH_SHORT).show();
+            return true;
+        }else if (id==R.id.item2) {
+            Toast.makeText(this, "Item 2", Toast.LENGTH_SHORT).show();
+            return true;
         }
         return  super.onOptionsItemSelected(item);
     }
