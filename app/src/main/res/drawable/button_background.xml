@@ -1,0 +1,5 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="50dp" /> <!-- Mengatur radius untuk menentukan lekukan, di sini diatur menjadi 20dp -->
+    <solid android:color="@color/red1" /> <!-- Warna latar belakang tombol -->
+</shape>
