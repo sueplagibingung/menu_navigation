@@ -1,10 +1,14 @@
 package com.example.menu_navigation;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TabLayout tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+        tabLayout.addTab(tabLayout.newTab().setText("Pengertian K3LH"));
+        tabLayout.addTab(tabLayout.newTab().setText("Penerapan"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         ViewPager viewPager = findViewById(R.id.pager);
@@ -58,11 +62,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         int id = item.getItemId();
-        if (id==R.id.setting){
-            Toast.makeText(this, "Menu Setting", Toast.LENGTH_SHORT).show();
+        if (id==R.id.notification){
+            showAlertDialog();
             return true;
-        } else if (id==R.id.favorit) {
-            Toast.makeText(this, "Menu Favorit", Toast.LENGTH_SHORT).show();
+        } else if (id==R.id.phone) {
+            String phoneNumber = "112";
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:" + phoneNumber));
+            startActivity(intent);
             return  true;
         }else if (id==R.id.item1) {
             Toast.makeText(this, "Item 1", Toast.LENGTH_SHORT).show();
@@ -72,5 +79,25 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return  super.onOptionsItemSelected(item);
+    }
+
+    private void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Peringatan")
+                .setMessage("Tekan Ikon Phone disamping Kiri untuk Melakukan Panggilan Darurat.")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

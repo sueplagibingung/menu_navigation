@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey1"
     tools:context=".SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Second Fragment" />
+        android:padding="12dp">
+        <TextView
+            android:id="@+id/judul_APD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Alat Pelindung Diri (APD)"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            />
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/gambar_apd"
+            android:layout_width="wrap_content"
+            android:layout_height="190dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/apd"
+            android:layout_below="@id/judul_APD"/>
+        <TextView
+            android:id="@+id/pengertianapd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pengertian_apd"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_below="@id/gambar_apd"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/judul_5r"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Budaya 5R"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/pengertianapd"
+            />
+
+        <ImageView
+            android:id="@+id/gambar_5r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-400dp"
+            android:src="@drawable/budaya5r"
+            android:layout_below="@id/judul_5r"/>
+    </RelativeLayout>
+
+</ScrollView>

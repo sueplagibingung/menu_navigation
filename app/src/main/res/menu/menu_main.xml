@@ -3,15 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/favorit"
-        android:icon="@drawable/ic_favorit"
+        android:id="@+id/phone"
+        android:icon="@drawable/ic_phone"
         app:showAsAction="ifRoom"
         android:title="Setting"/>
 
 
     <item
-        android:id="@+id/setting"
-        android:icon="@drawable/ic_settings"
+        android:id="@+id/notification"
+        android:icon="@drawable/ic_notification"
         app:showAsAction="ifRoom"
         android:title="Setting" />
 
